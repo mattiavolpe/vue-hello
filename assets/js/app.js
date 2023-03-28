@@ -7,19 +7,18 @@ Aggiungere alla pagina un’immagine, presa anch’essa da un data.
 
 const { createApp } = Vue;
 
-  createApp({
-    data() {
-      return {
-        myText: "This is my first message printed with Vue.js",
-        imagePath: `https://picsum.photos/${this.generateRandomImageSideResolution()}/${this.generateRandomImageSideResolution()}`,
-        counter: 1
-      }
-    },
-    methods: {
-      generateRandomImageSideResolution() {
-        const sideResolution = Math.floor(Math.random() * 501) + 300;
-        console.log(sideResolution);
-        return sideResolution;
-      }
+createApp({
+  data() {
+    return {
+      myText: "This is my first message printed with Vue.js",
+      imagePath: `https://picsum.photos/${this.generateRandomImageSideResolution()}/${this.generateRandomImageSideResolution()}`
     }
-  }).mount('#app');
+  },
+  methods: {
+    generateRandomImageSideResolution() {
+      const sideResolution = Math.floor(Math.random() * 501) + 300;
+      console.log(sideResolution);
+      return sideResolution;
+    }
+  }
+}).mount('#app');
