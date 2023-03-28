@@ -5,6 +5,8 @@ Bonus:
 Aggiungere alla pagina un’immagine, presa anch’essa da un data.
 */
 
+let counter = 0;
+
 const { createApp } = Vue;
 
 createApp({
@@ -17,7 +19,8 @@ createApp({
   methods: {
     generateRandomImageSideResolution() {
       const sideResolution = Math.floor(Math.random() * 501) + 300;
-      console.log(sideResolution);
+      counter % 2 === 0 ? console.log(`Width: ${sideResolution}px`) : console.log(`Height: ${sideResolution}px`)
+      counter++;
       return sideResolution;
     }
   }
